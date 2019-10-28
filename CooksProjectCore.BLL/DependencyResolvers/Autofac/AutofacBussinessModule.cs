@@ -2,6 +2,7 @@
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Concrete;
 using CooksProjectCore.DAL.Asbtract;
+using CooksProjectCore.DAL.Concrete;
 using CooksProjectCore.DAL.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace CooksProjectCore.BLL.DependencyResolvers.Autofac
         {
             builder.RegisterType<FoodManager>().As<IFoodService>();
             builder.RegisterType<EFFoodDAL>().As<IFoodDAL>();
+
+            builder.RegisterType<UserManager>().As<IUserService>();
+            builder.RegisterType<EFUserDAL>().As<IUserDAL>();
         }
     }
 }
