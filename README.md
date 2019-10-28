@@ -9,6 +9,12 @@ DataAccessLayer (DAL) katmanında Core katmanında uygulanan GenericRepositoryPa
 DependencyInjection Aracı olarak Autofac kullanılmaktadır. BussinessLogicLayer (BLL) katmanında interface'lerin miras vereceği sınıflar belirlenmiş olup,
 Startup.cs class'ı içinde Configure edilmiştir.
 
+Proje Azure.com ve Somee.com da yayınlanmıştır. Veritabanı Somee.com'da bulunmaktadır.
+
+Azure Adres : https://cooks-api.azurewebsites.net/api/foods
+
+Somee Adres : http://cooks-api.somee.com/api/foods
+
 Aşağıda verilen yollar apinin kullandığı url rotalarıdır.
 
 foods/ : GetsAllFoods-Post-Put-Delete
