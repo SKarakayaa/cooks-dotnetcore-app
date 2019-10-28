@@ -1,0 +1,12 @@
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Release\netstandard2.0\CooksProjectCore.Entities.deps.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Release\netstandard2.0\CooksProjectCore.Entities.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Release\netstandard2.0\CooksProjectCore.Entities.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Release\netstandard2.0\CooksProjectCore.Core.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Release\netstandard2.0\CooksProjectCore.Core.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.csprojAssemblyReference.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.csproj.CoreCompileInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.AssemblyInfoInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.AssemblyInfo.cs
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.csproj.CopyComplete
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Release\netstandard2.0\CooksProjectCore.Entities.pdb

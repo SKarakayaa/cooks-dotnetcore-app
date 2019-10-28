@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CooksProjectCore.DAL\CooksProjectCore.DAL.csproj" />
+    <ProjectReference Include="..\CooksProjectCore.Entities\CooksProjectCore.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

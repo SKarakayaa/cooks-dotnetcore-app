@@ -1,0 +1,9 @@
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\bin\Debug\netstandard2.0\CooksProjectCore.Core.deps.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\bin\Debug\netstandard2.0\CooksProjectCore.Core.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.csprojAssemblyReference.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.csproj.CoreCompileInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.AssemblyInfoInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.AssemblyInfo.cs
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\bin\Debug\netstandard2.0\CooksProjectCore.Core.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Core\obj\Debug\netstandard2.0\CooksProjectCore.Core.pdb

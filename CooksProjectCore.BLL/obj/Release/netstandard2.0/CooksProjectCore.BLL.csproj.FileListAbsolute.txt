@@ -1,0 +1,16 @@
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.BLL.deps.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.BLL.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.BLL.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.Core.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.DAL.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.Entities.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.DAL.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.Entities.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Release\netstandard2.0\CooksProjectCore.Core.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.csprojAssemblyReference.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.csproj.CoreCompileInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.AssemblyInfoInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.AssemblyInfo.cs
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.csproj.CopyComplete
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Release\netstandard2.0\CooksProjectCore.BLL.pdb
