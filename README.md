@@ -12,6 +12,9 @@ Startup.cs class'ı içinde Configure edilmiştir.
 Aşağıda verilen yollar apinin kullandığı url rotalarıdır.
 
 foods/ : GetsAllFoods-Post-Put-Delete
+
 foods/{userId} : Belli bir kullanıcının sahip olduğu yemek menüleri
+
 foods/{typeId} : Belli bir türe ait olan yemeklerin listesi
+
 foods/{foodId} : Belli bir yemek getirir
