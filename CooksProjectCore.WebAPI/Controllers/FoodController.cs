@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -56,6 +57,7 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpPost]
         [Route("foods/")]
+        [Authorize(Roles ="Product.Add")]
         public IActionResult AddFood(Food food)
         {
             var result = _foodService.Add(food);
@@ -65,6 +67,7 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpPut]
         [Route("foods/")]
+        [Authorize(Roles ="Product.Update")]
         public IActionResult UpdateFood(Food food)
         {
             var result = _foodService.Update(food);
@@ -74,6 +77,7 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpDelete]
         [Route("foods/")]
+        [Authorize(Roles ="Product.Delete")]
         public IActionResult DeleteFood(Food food)
         {
             var result = _foodService.Remove(food);

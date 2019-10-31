@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CooksProjectCore.Core.Utilities.Results
 {
-    class ErrorResult : Result
+    public class ErrorResult : Result
     {
         public ErrorResult() : base(false)
         {

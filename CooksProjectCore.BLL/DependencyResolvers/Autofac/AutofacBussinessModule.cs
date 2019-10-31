@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Concrete;
+using CooksProjectCore.Core.Security;
+using CooksProjectCore.Core.Security.Jwt;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.DAL.Concrete;
 using CooksProjectCore.DAL.Concrete.EntityFramework;
@@ -19,6 +21,8 @@ namespace CooksProjectCore.BLL.DependencyResolvers.Autofac
 
             builder.RegisterType<UserManager>().As<IUserService>();
             builder.RegisterType<EFUserDAL>().As<IUserDAL>();
+            builder.RegisterType<AuthManager>().As<IAuthService>();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>();
         }
     }
 }

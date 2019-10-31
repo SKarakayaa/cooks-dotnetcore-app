@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CooksProjectCore.Core.Utilities.Results
 {
-    class ErrorDataResult<T> : DataResult<T>
+    public class ErrorDataResult<T> : DataResult<T>
     {
         public ErrorDataResult(T data) : base(data, false)
         {
@@ -12,6 +12,10 @@ namespace CooksProjectCore.Core.Utilities.Results
 
         public ErrorDataResult(T data,string message) : base(data, false, message)
         {
+        }
+        public ErrorDataResult(string message) : base(default, false, message)
+        {
+
         }
     }
 }

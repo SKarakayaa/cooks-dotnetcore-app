@@ -1,10 +1,8 @@
 ﻿using CooksProjectCore.BLL.Abstract;
-using CooksProjectCore.Core.Utilities.Results;
+using CooksProjectCore.Core.Entities.Concrete;
 using CooksProjectCore.DAL.Asbtract;
-using CooksProjectCore.Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace CooksProjectCore.BLL.Concrete
@@ -16,37 +14,19 @@ namespace CooksProjectCore.BLL.Concrete
         {
             this._userDAL = _userDAL;
         }
-        public IResult Add(User user)
+        public void Add(User user)
         {
             _userDAL.Add(user);
-            return new SuccessResult("Hesap Başarıyla Oluşturuldu !...");
         }
 
-        public IResult Delete(User user)
+        public List<Role> GetRoles(User user)
         {
-            _userDAL.Remove(user);
-            return new SuccessResult("Hesap Başarıyla Silindi !...");
+           return _userDAL.GetRoles(user);
         }
 
-        public IDataResult<User> GetUser(int userId)
+        public User GetUserByMail(string mail)
         {
-            return new SuccessDataResult<User>(_userDAL.Get(f => f.ID == userId));
-        }
-
-        public IDataResult<List<User>> GetUsers()
-        {
-            return new SuccessDataResult<List<User>>(_userDAL.GetList().ToList());
-        }
-
-        public IDataResult<List<User>> GetUsers(int memberType)
-        {
-            return new SuccessDataResult<List<User>>(_userDAL.GetList(w => w.MemberType == memberType).ToList());
-        }
-
-        public IResult Update(User user)
-        {
-            _userDAL.Update(user);
-            return new SuccessResult("Kullanıcı Bilgileri Başarıyla Güncellendi !...");
+            return _userDAL.Get(f => f.Email == mail);
         }
     }
 }

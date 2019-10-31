@@ -1,4 +1,5 @@
-﻿using CooksProjectCore.Entities.Concrete;
+﻿using CooksProjectCore.Core.Entities.Concrete;
+using CooksProjectCore.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,7 @@ namespace CooksProjectCore.DAL.Concrete.EntityFramework.Context
         }
         public DbSet<Food> Foods{ get; set; }
         public DbSet<User> Users{ get; set; }
+        public DbSet<Role> Roles{ get; set; }
+        public DbSet<UserRole> UserRoles{ get; set; }
     }
 }

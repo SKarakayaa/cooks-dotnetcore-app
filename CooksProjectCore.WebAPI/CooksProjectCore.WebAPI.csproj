@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\**" />
-    <Content Remove="Views\**" />
-    <EmbeddedResource Remove="Views\**" />
-    <None Remove="Views\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -21,10 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CooksProjectCore.BLL\CooksProjectCore.BLL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Home\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
