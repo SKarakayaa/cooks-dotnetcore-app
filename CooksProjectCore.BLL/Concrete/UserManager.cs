@@ -70,5 +70,9 @@ namespace CooksProjectCore.BLL.Concrete
         {
             return _userDAL.Followers(userId);
         }
+        public void AssignRole(int userId)
+        {
+            _userDAL.AssignRole(userId);
+        }
     }
 }

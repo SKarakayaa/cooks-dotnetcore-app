@@ -57,9 +57,11 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpPost]
         [Route("foods/")]
-        [Authorize(Roles ="Product.Add")]
+        [Authorize]
         public IActionResult AddFood(Food food)
         {
+            food.ID = Guid.NewGuid();
+            food.AddedDate = DateTime.Now;
             var result = _foodService.Add(food);
             if (result.Succes)
                 return Ok(result.Message);
@@ -67,9 +69,10 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpPut]
         [Route("foods/")]
-        [Authorize(Roles ="Product.Update")]
+        [Authorize]
         public IActionResult UpdateFood(Food food)
         {
+            food.ModifiedDate = DateTime.Now;
             var result = _foodService.Update(food);
             if (result.Succes)
                 return Ok(result.Message);
@@ -77,7 +80,7 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpDelete]
         [Route("foods/")]
-        [Authorize(Roles ="Product.Delete")]
+        [Authorize]
         public IActionResult DeleteFood(Food food)
         {
             var result = _foodService.Remove(food);

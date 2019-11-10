@@ -4,6 +4,13 @@ using System.Text;
 
 namespace CooksProjectCore.Core.Entities.Concrete
 {
+    public enum RoleEnum
+    {
+        Default=1,
+        UsersList=2,
+        UsersDelete=3,
+        Authorizer=4
+    }
     public class Role:IEntity
     {
         public int ID{ get; set; }

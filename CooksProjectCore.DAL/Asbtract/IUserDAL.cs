@@ -18,5 +18,7 @@ namespace CooksProjectCore.DAL.Asbtract
         void AddSocialMedia(SocialMedia socialMedia);
         void UpdateSocialMedia(SocialMedia socialMedia);
         SocialMedia SocialMediaOfUser(int userId);
+
+        void AssignRole(int userId);
     }
 }

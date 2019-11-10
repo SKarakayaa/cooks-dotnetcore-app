@@ -53,6 +53,7 @@ namespace CooksProjectCore.BLL.Concrete
                 PasswordSalt = passwordSalt
             };
             _userService.Add(user);
+            _userService.AssignRole(user.ID);
             return new SuccessDataResult<User>(user, Messages.UserCreated);
         }
 

@@ -78,5 +78,18 @@ namespace CooksProjectCore.DAL.Concrete.EntityFramework
                 return db.SocialMedias.SingleOrDefault(f => f.UserID == userId);
             }
         }
+        public void AssignRole(int userId)
+        {
+            using (var db = new CooksContext())
+            {
+                var user_roles = new UserRole
+                {
+                    UserID = userId,
+                    RoleID = (int)RoleEnum.Default
+                };
+                db.Entry(user_roles).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -19,5 +19,6 @@ namespace CooksProjectCore.BLL.Abstract
         SocialMedia GetSocialMedia(int userId);
         List<FollowTable> Follows(int userId);
         List<FollowTable> Followers(int userId);
+        void AssignRole(int userId);
     }
 }
