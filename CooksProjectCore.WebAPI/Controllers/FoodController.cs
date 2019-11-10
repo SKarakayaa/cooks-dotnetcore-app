@@ -85,5 +85,55 @@ namespace CooksProjectCore.WebAPI.Controllers
                 return Ok(result.Message);
             return BadRequest(result.Message);
         }
+
+        [HttpGet]
+        [Route("foods/{foodId}/equipments")]
+        public IActionResult GetEquipments(Guid foodId)
+        {
+            var result = _foodService.GetEquipments(foodId);
+            if (result.Succes)
+                return Ok(result.Data);
+            return BadRequest(result.Message);
+        }
+        [HttpPost]
+        [Route("foods/{foodId}/equipments")]
+        [Authorize]
+        public IActionResult AddEquipment(Guid foodId, [FromBody]string equipments)
+        {
+            var result = _foodService.AddEquipment(foodId, equipments);
+            if (result.Succes)
+                return Ok(result.Message);
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet]
+        [Route("foods/{foodId}/likes")]
+        public IActionResult GetLikes(Guid foodId)
+        {
+            var result = _foodService.GetLikes(foodId);
+            if (result.Succes)
+                return Ok(result.Data);
+            return BadRequest(result.Message);
+        }
+        [HttpPost]
+        [Route("foods/add-like")]
+        [Authorize]
+        public IActionResult AddLike(Like like)
+        {
+            var result = _foodService.AddLike(like);
+            if (result.Succes)
+                return Ok(result.Message);
+            return BadRequest(result.Message);
+        }
+        [HttpDelete]
+        [Route("foods/add-like")]
+        [Authorize]
+        public IActionResult DeleteLike(Like like)
+        {
+            var result = _foodService.DeleteLike(like);
+            if (result.Succes)
+                return Ok(result.Message);
+            return BadRequest(result.Message);
+        }
     }
 }

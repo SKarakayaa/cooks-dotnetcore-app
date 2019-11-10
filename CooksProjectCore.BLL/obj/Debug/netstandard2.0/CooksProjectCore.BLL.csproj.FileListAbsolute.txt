@@ -14,3 +14,5 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\CooksProjectCore.Entities.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\CooksProjectCore.Core.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.csproj.CopyComplete
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.xml

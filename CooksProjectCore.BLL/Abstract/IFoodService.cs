@@ -15,5 +15,11 @@ namespace CooksProjectCore.BLL.Abstract
         IResult Add(Food food);
         IResult Remove(Food food);
         IResult Update(Food food);
+        IDataResult<List<FoodEquipment>> GetEquipments(Guid foodId);
+        IResult AddEquipment(Guid foodId, string equipments);
+
+        IDataResult<List<Like>> GetLikes(Guid foodId);
+        IResult AddLike(Like like);
+        IResult DeleteLike(Like like);
     }
 }

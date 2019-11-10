@@ -1,0 +1,14 @@
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\bin\Debug\netcoreapp2.1\CooksMVC.UI.deps.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\bin\Debug\netcoreapp2.1\CooksMVC.UI.runtimeconfig.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\bin\Debug\netcoreapp2.1\CooksMVC.UI.runtimeconfig.dev.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\bin\Debug\netcoreapp2.1\CooksMVC.UI.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\bin\Debug\netcoreapp2.1\CooksMVC.UI.pdb
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.csprojAssemblyReference.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.csproj.CoreCompileInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.RazorAssemblyInfo.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.RazorAssemblyInfo.cs
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.AssemblyInfoInputs.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.AssemblyInfo.cs
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.RazorTargetAssemblyInfo.cache
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksMVC.UI\obj\Debug\netcoreapp2.1\CooksMVC.UI.pdb

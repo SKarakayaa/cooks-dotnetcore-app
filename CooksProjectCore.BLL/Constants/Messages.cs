@@ -13,5 +13,8 @@ namespace CooksProjectCore.BLL.Constants
         public static string SuccessLogin = "Başarıyla Giriş Yaptınız !...";
         public static string PasswordVerifyError = "Hatalı Şifre Girdiniz !...";
         public static string AccessTokenCreated = "Token Başarıyla Oluşturuldu !...";
+
+        public static string AddedComment = "Yorum Başarıyla Eklendi !...";
+        public static string DeleteComment = "Yorum Başarıyla Silindi !...";
     }
 }

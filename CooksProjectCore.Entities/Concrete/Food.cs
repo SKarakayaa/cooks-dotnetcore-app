@@ -11,6 +11,7 @@ namespace CooksProjectCore.Entities.Concrete
         public string Name{ get; set; }
         public int UserID{ get; set; }
         public string Recipe{ get; set; }
+        public string ImageUrl{ get; set; }
         public int FoodType{ get; set; }
         public DateTime AddedDate{ get; set; }
         public Nullable<DateTime> ModifiedDate{ get; set; }

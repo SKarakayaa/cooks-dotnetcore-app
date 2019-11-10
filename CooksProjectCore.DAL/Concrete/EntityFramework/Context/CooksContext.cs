@@ -19,5 +19,9 @@ namespace CooksProjectCore.DAL.Concrete.EntityFramework.Context
         public DbSet<UserRole> UserRoles{ get; set; }
         public DbSet<FollowTable> FollowTables{ get; set; }
         public DbSet<SocialMedia> SocialMedias{ get; set; }
+        public DbSet<FoodEquipment> FoodEquipments{ get; set; }
+        public DbSet<Like> Likes{ get; set; }
+        public DbSet<Comment> Comments{ get; set; }
+        public DbSet<CommentReply> CommentReplies{ get; set; }
     }
 }

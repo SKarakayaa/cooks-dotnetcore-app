@@ -23,6 +23,9 @@ namespace CooksProjectCore.BLL.DependencyResolvers.Autofac
             builder.RegisterType<EFUserDAL>().As<IUserDAL>();
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
+
+            builder.RegisterType<CommentManager>().As<ICommentService>();
+            builder.RegisterType<EFCommentDAL>().As<ICommentDAL>();
         }
     }
 }

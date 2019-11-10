@@ -36,7 +36,7 @@ namespace CooksProjectCore.WebAPI
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowOrigin",
-                    builder => builder.WithOrigins("https://localhost:3000"));
+                    builder => builder.WithOrigins("https://localhost:5000"));
             });
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();

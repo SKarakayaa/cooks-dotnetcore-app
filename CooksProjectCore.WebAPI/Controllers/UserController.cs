@@ -20,6 +20,8 @@ namespace CooksProjectCore.WebAPI.Controllers
         {
             this._userService = _userService;
         }
+
+        //Get User By ID
         [HttpGet]
         [Route("users/{userId}")]
         [Authorize]
@@ -38,6 +40,8 @@ namespace CooksProjectCore.WebAPI.Controllers
                 Job = findUser.Job
             });
         }
+
+        //Get All Users
         [HttpGet]
         [Route("users/")]
         [Authorize(Roles = "Users.List")]
@@ -58,16 +62,29 @@ namespace CooksProjectCore.WebAPI.Controllers
             }
             return Ok(users);
         }
-        [HttpGet]
-        [Route("users/{userId}/social-media")]
+
+        //Add Follow to User's Follows
+        [HttpPost]
+        [Route("users/{userId}/follows")]
         [Authorize]
-        public IActionResult GetSocialMedia(int userId)
+        public IActionResult AddFollow(FollowTable followTable)
         {
-            var socialMedia = _userService.GetSocialMedia(userId);
-            if (socialMedia == null)
-                return NotFound();
-            return Ok(socialMedia);
+            _userService.AddFollow(followTable);
+            return Ok();
         }
+
+        //Delete User from Follows
+        [HttpDelete]
+        [Route("users/{userId}/follows")]
+        [Authorize]
+        public IActionResult DeleteFollow(int userId,int followId)
+        {
+            var follow = _userService.Follows(userId).FirstOrDefault(f => f.FollowID == followId);
+            _userService.DeleteFollow(follow);
+            return Ok();
+        }
+
+        //Get Follows of Specific User
         [HttpGet]
         [Route("users/{userId}/follows")]
         [Authorize]
@@ -78,6 +95,8 @@ namespace CooksProjectCore.WebAPI.Controllers
                 return NotFound();
             return Ok(follows);
         }
+
+        //Get Followers of Specific User
         [HttpGet]
         [Route("users/{userId}/followers")]
         [Authorize]
@@ -89,6 +108,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             return Ok(followers);
         }
 
+        //Add Social Media Informations to User
         [HttpPost]
         [Route("users/{userId}/social-media")]
         [Authorize]
@@ -98,6 +118,28 @@ namespace CooksProjectCore.WebAPI.Controllers
             socialMedia.UserID = userId;
             _userService.AddSocialMedia(socialMedia);
             return Ok();
+        }
+
+        //Update Social Media Informations of User
+        [HttpPut]
+        [Route("users/{userId}/social-media")]
+        [Authorize]
+        public IActionResult UpdateSocialMedia(SocialMedia socialMedia)
+        {
+            _userService.UpdateSocialMedia(socialMedia);
+            return Ok();
+        }
+
+        //Get Social Media Informations of Users
+        [HttpGet]
+        [Route("users/{userId}/social-media")]
+        [Authorize]
+        public IActionResult GetSocialMedia(int userId)
+        {
+            var socialMedia = _userService.GetSocialMedia(userId);
+            if (socialMedia == null)
+                return NotFound();
+            return Ok(socialMedia);
         }
     }
 }
