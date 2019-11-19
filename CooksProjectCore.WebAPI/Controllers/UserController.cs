@@ -24,7 +24,6 @@ namespace CooksProjectCore.WebAPI.Controllers
         //Get User By ID
         [HttpGet]
         [Route("users/{userId}")]
-        [Authorize]
         public IActionResult GetUser(int userId)
         {
             var findUser = _userService.GetUserByID(userId);
@@ -44,7 +43,6 @@ namespace CooksProjectCore.WebAPI.Controllers
         //Get All Users
         [HttpGet]
         [Route("users/")]
-        [Authorize(Roles = "Users.List")]
         public IActionResult GetUsers()
         {
             var userList = _userService.GetUsers();
@@ -87,7 +85,6 @@ namespace CooksProjectCore.WebAPI.Controllers
         //Get Follows of Specific User
         [HttpGet]
         [Route("users/{userId}/follows")]
-        [Authorize]
         public IActionResult GetFollows(int userId)
         {
             var follows = _userService.Follows(userId);
@@ -99,7 +96,6 @@ namespace CooksProjectCore.WebAPI.Controllers
         //Get Followers of Specific User
         [HttpGet]
         [Route("users/{userId}/followers")]
-        [Authorize]
         public IActionResult GetFollowers(int userId)
         {
             var followers = _userService.Followers(userId);
@@ -133,7 +129,6 @@ namespace CooksProjectCore.WebAPI.Controllers
         //Get Social Media Informations of Users
         [HttpGet]
         [Route("users/{userId}/social-media")]
-        [Authorize]
         public IActionResult GetSocialMedia(int userId)
         {
             var socialMedia = _userService.GetSocialMedia(userId);
