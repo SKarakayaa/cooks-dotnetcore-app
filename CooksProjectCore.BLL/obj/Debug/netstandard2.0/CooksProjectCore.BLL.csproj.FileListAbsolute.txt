@@ -2,7 +2,6 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\CooksProjectCore.BLL.dll
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\bin\Debug\netstandard2.0\CooksProjectCore.BLL.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.csprojAssemblyReference.cache
-C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.csproj.CoreCompileInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.AssemblyInfoInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.AssemblyInfo.cs
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.BLL\obj\Debug\netstandard2.0\CooksProjectCore.BLL.dll

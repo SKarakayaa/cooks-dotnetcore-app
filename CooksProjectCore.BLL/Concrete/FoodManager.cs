@@ -1,4 +1,6 @@
 ﻿using CooksProjectCore.BLL.Abstract;
+using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.Utilities.Results;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
@@ -17,6 +19,7 @@ namespace CooksProjectCore.BLL.Concrete
         {
             this._foodDAL = _foodDAL;
         }
+        [ValidationAspect(typeof(FoodValidation),Priority = 1)]
         public IResult Add(Food food)
         {
             _foodDAL.Add(food);
