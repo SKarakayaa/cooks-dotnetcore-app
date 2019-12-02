@@ -4,7 +4,6 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Debug\netstandard2.0\CooksProjectCore.Core.dll
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\bin\Debug\netstandard2.0\CooksProjectCore.Core.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Debug\netstandard2.0\CooksProjectCore.Entities.csprojAssemblyReference.cache
-C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Debug\netstandard2.0\CooksProjectCore.Entities.csproj.CoreCompileInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Debug\netstandard2.0\CooksProjectCore.Entities.AssemblyInfoInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Debug\netstandard2.0\CooksProjectCore.Entities.AssemblyInfo.cs
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.Entities\obj\Debug\netstandard2.0\CooksProjectCore.Entities.csproj.CopyComplete

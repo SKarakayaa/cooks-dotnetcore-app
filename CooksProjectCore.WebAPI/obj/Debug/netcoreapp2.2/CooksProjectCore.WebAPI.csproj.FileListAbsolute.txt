@@ -12,7 +12,6 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\CooksProjectCore.DAL.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\CooksProjectCore.Entities.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.csprojAssemblyReference.cache
-C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.RazorAssemblyInfo.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.RazorAssemblyInfo.cs
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.AssemblyInfoInputs.cache
@@ -22,3 +21,6 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.dll
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\obj\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\CooksProjectCore.WebAPI.Views.dll
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.WebAPI\bin\Debug\netcoreapp2.2\Properties\launchSettings.json

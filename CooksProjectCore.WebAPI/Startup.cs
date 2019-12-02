@@ -5,8 +5,11 @@ using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CooksProjectCore.BLL.DependencyResolvers.Autofac;
+using CooksProjectCore.Core.DependencyResolver;
+using CooksProjectCore.Core.Extensions;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Encryption;
+using CooksProjectCore.Core.Utilities.IoC;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -64,6 +67,12 @@ namespace CooksProjectCore.WebAPI
             containerBuilder.RegisterModule<AutofacBussinessModule>();
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
+
+            services.AddDependencyResolver(new ICoreModule[]
+            {
+                new CoreModule()
+            });
+
             return new AutofacServiceProvider(container);
         }
 

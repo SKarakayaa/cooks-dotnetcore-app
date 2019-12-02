@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "22c4c33e2c02d0a0765e8275909687c01f3986ff"
+    "signature": ""
   },
   "compilationOptions": {
     "defines": [
@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP2_2"
     ],
-    "languageVersion": "",
+    "languageVersion": "7.3",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -64,6 +64,59 @@
         },
         "compile": {
           "lib/netstandard2.0/Autofac.Extensions.DependencyInjection.dll": {}
+        }
+      },
+      "Autofac.Extras.DynamicProxy/4.5.0": {
+        "dependencies": {
+          "Autofac": "4.9.4",
+          "Castle.Core": "4.3.1",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Autofac.Extras.DynamicProxy.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Autofac.Extras.DynamicProxy.dll": {}
+        }
+      },
+      "Castle.Core/4.3.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Xml.XmlDocument": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.5/Castle.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.3.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.5/Castle.Core.dll": {}
+        }
+      },
+      "FluentValidation/8.5.1": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.5.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -342,6 +395,37 @@
           "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "dependencies": {
+          "System.ComponentModel": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.ComponentModel.Primitives": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -465,6 +549,19 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
+      "System.Diagnostics.TraceSource/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.2.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/5.6.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "5.6.0",
@@ -498,8 +595,10 @@
       "CooksProjectCore.BLL/1.0.0": {
         "dependencies": {
           "Autofac": "4.9.4",
+          "Autofac.Extras.DynamicProxy": "4.5.0",
           "CooksProjectCore.DAL": "1.0.0",
-          "CooksProjectCore.Entities": "1.0.0"
+          "CooksProjectCore.Entities": "1.0.0",
+          "FluentValidation": "8.5.1"
         },
         "runtime": {
           "CooksProjectCore.BLL.dll": {}
@@ -510,6 +609,8 @@
       },
       "CooksProjectCore.Core/1.0.0": {
         "dependencies": {
+          "Autofac.Extras.DynamicProxy": "4.5.0",
+          "FluentValidation": "8.5.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
         },
@@ -3615,6 +3716,27 @@
       "path": "autofac.extensions.dependencyinjection/5.0.1",
       "hashPath": "autofac.extensions.dependencyinjection.5.0.1.nupkg.sha512"
     },
+    "Autofac.Extras.DynamicProxy/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ujL3jmnJ1C+jcG3cRhy6SAYaTWw92lP3t5Zf8KltmYcY+kvOVSDmfpKLtNH34MjalWPkWiKzTsS96ouAULMMeg==",
+      "path": "autofac.extras.dynamicproxy/4.5.0",
+      "hashPath": "autofac.extras.dynamicproxy.4.5.0.nupkg.sha512"
+    },
+    "Castle.Core/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8Y/eTr6GTElAGV7eAmJuhfLhGdFpNvaNrQ9UQYDScziLmX+/BLGM+9eQr0IcdNDcPN0ADmbtwT6MgecGKy4obw==",
+      "path": "castle.core/4.3.1",
+      "hashPath": "castle.core.4.3.1.nupkg.sha512"
+    },
+    "FluentValidation/8.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GoygZcMkCcve3UHZM3ITSzgrPdfjPSl5mRSQKL6BlV8aI0yi+shIAju7k6QirPESNGsKzn+r4ne0JmqsAGG/PA==",
+      "path": "fluentvalidation/8.5.1",
+      "hashPath": "fluentvalidation.8.5.1.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3741,6 +3863,27 @@
       "path": "swashbuckle.aspnetcore.swaggerui/4.0.1",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.4.0.1.nupkg.sha512"
     },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "path": "system.componentmodel.primitives/4.3.0",
+      "hashPath": "system.componentmodel.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.TypeConverter/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
+      "path": "system.componentmodel.typeconverter/4.3.0",
+      "hashPath": "system.componentmodel.typeconverter.4.3.0.nupkg.sha512"
+    },
     "System.Composition/1.0.31": {
       "type": "package",
       "serviceable": true,
@@ -3782,6 +3925,13 @@
       "sha512": "sha512-0Zae/FtzeFgDBBuILeIbC/T9HMYbW4olAmi8XqqAGosSOWvXfiQLfARZEhiGd0LVXaYgXr0NhxiU1LldRP1fpQ==",
       "path": "system.composition.typedparts/1.0.31",
       "hashPath": "system.composition.typedparts.1.0.31.nupkg.sha512"
+    },
+    "System.Diagnostics.TraceSource/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
+      "path": "system.diagnostics.tracesource/4.3.0",
+      "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/5.6.0": {
       "type": "package",

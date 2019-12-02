@@ -2,7 +2,6 @@ C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\bin\Debug\netstandard2.0\CooksProjectCore.DAL.dll
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\bin\Debug\netstandard2.0\CooksProjectCore.DAL.pdb
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\obj\Debug\netstandard2.0\CooksProjectCore.DAL.csprojAssemblyReference.cache
-C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\obj\Debug\netstandard2.0\CooksProjectCore.DAL.csproj.CoreCompileInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\obj\Debug\netstandard2.0\CooksProjectCore.DAL.AssemblyInfoInputs.cache
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\obj\Debug\netstandard2.0\CooksProjectCore.DAL.AssemblyInfo.cs
 C:\Users\sefak\Desktop\NetCore\CooksDotNetCore\CooksProjectCore\CooksProjectCore.DAL\obj\Debug\netstandard2.0\CooksProjectCore.DAL.dll

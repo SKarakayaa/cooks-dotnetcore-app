@@ -1,5 +1,6 @@
 ﻿using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.Utilities.Results;
 using CooksProjectCore.DAL.Asbtract;
@@ -20,6 +21,7 @@ namespace CooksProjectCore.BLL.Concrete
             this._foodDAL = _foodDAL;
         }
         [ValidationAspect(typeof(FoodValidation),Priority = 1)]
+        [CacheRemoveAspect("IFoodService.Get")]
         public IResult Add(Food food)
         {
             _foodDAL.Add(food);
@@ -41,7 +43,7 @@ namespace CooksProjectCore.BLL.Concrete
         {
             return new SuccessDataResult<List<FoodEquipment>>(_foodDAL.GetEquipments(foodId));
         }
-
+        [CacheAspect(_duration:10)]
         public IDataResult<List<Food>> GetList()
         {
             return new SuccessDataResult<List<Food>>(_foodDAL.GetList().ToList());
