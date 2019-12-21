@@ -26,12 +26,12 @@ namespace CooksProjectCore.BLL.Concrete
 
         public List<FollowTable> Followers(int userId)
         {
-            return _followDAL.GetList(x => x.FollowID == userId);
+            return _followDAL.GetList(x => x.FollowID == userId,new string[] { "FollowerUser" });
         }
 
         public List<FollowTable> Follows(int userId)
         {
-            return _followDAL.GetList(x => x.FollowerID == userId);
+            return _followDAL.GetList(x => x.FollowerID == userId,new string[] { "FollowUser" });
         }
     }
 }

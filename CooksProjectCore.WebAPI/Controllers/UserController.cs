@@ -71,7 +71,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var follows = _followService.Follows(userId);
             if (follows == null)
                 return NotFound();
-            return Ok(follows);
+            return Ok(_mapper.Map<List<FollowTableDTO>>(follows));
         }
         [HttpGet]
         [Route("users/{userId}/followers")]

@@ -18,6 +18,8 @@ namespace CooksProjectCore.BLL.Mapping.Automapper
             CreateMap<Food, FoodsDTO_ForList>().ReverseMap();
             CreateMap<User, UserDTO_ForEntities>().ReverseMap();
             CreateMap<User, UserDTO_ForView>().ReverseMap();
+            CreateMap<FollowTable, FollowTableDTO>().ReverseMap();
+            CreateMap<FollowTable, FollowerTableDTO>().ReverseMap();
         }
     }
 }
