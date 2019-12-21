@@ -27,5 +27,10 @@ namespace CooksProjectCore.BLL.Concrete
             _commentDAL.Remove(comment);
             return new SuccessResult();
         }
+
+        public IDataResult<List<Comment>> GetCommentsByMenu(Guid menuId)
+        {
+            return new SuccessDataResult<List<Comment>>(_commentDAL.GetList(x => x.FoodID == menuId && x.ParentCommentID == null, new string[] { "CommentReplies","User","CommentReplies.User" }));
+        }
     }
 }

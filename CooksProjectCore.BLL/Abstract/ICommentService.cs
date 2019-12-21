@@ -11,5 +11,6 @@ namespace CooksProjectCore.BLL.Abstract
     {
         IResult AddComment(Comment comment);
         IResult DeleteComment(Guid commentId);
+        IDataResult<List<Comment>> GetCommentsByMenu(Guid menuId);
     }
 }

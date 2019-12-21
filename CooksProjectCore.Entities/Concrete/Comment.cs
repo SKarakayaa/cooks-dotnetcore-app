@@ -15,7 +15,7 @@ namespace CooksProjectCore.Entities.Concrete
 
         public Guid ID{ get; set; }
         public Nullable<Guid> ParentCommentID{ get; set; }
-        public Guid FoodID{ get; set; }
+        public Nullable<Guid> FoodID{ get; set; }
         public int UserID{ get; set; }
         public string Text{ get; set; }
         public DateTime AddedDate{ get; set; }

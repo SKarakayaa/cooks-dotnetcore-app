@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.Entities.Concrete;
+using CooksProjectCore.Entities.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +16,11 @@ namespace CooksProjectCore.WebAPI.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;
-        public CommentController(ICommentService commentService)
+        private readonly IMapper _mapper;
+        public CommentController(ICommentService commentService,IMapper mapper)
         {
             _commentService = commentService;
+            _mapper = mapper;
         }
         [HttpPost]
         [Route("comments/add-comment")]
@@ -37,6 +41,16 @@ namespace CooksProjectCore.WebAPI.Controllers
             if (!result.Succes)
                 return BadRequest(result.Message);
             return Ok(result.Message);
+        }
+        [HttpGet]
+        [Route("comments/{foodId}")]
+        public IActionResult GetCommentsByMenu(string foodId)
+        {
+            var result = _commentService.GetCommentsByMenu(Guid.Parse(foodId));
+            if (!result.Succes)
+                return BadRequest(result.Message);
+            var commentDTO = _mapper.Map<List<CommentDTO>>(result.Data); 
+            return Ok(commentDTO);
         }
     }
 }

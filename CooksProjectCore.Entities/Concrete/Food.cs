@@ -10,7 +10,6 @@ namespace CooksProjectCore.Entities.Concrete
     {
         public Food()
         {
-            this.Comments = new List<Comment>();
             this.FoodEquipments = new List<FoodEquipment>();
         }
         public Guid ID{ get; set; }
@@ -26,8 +25,6 @@ namespace CooksProjectCore.Entities.Concrete
 
         [ForeignKey("UserID")]
         public virtual User User{ get; set; }
-
-        public IList<Comment> Comments { get; set; }
         public IList<FoodEquipment> FoodEquipments { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace CooksProjectCore.BLL.Concrete
 
         public IDataResult<Food> Get(Guid foodId)
         {
-            var food = _foodDAL.Get(x => x.ID == foodId, new string[] { "User", "Comments", "FoodEquipments" });
+            var food = _foodDAL.Get(x => x.ID == foodId, new string[] { "User","FoodEquipments" });
             return new SuccessDataResult<Food>(food);
         }
 

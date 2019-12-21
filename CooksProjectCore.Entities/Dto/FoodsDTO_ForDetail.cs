@@ -15,7 +15,6 @@ namespace CooksProjectCore.Entities.Dto
         public DateTime AddedDate{ get; set; }
         public int TotalLikes{ get; set; }
         public int TotalComments { get; set; }
-        public List<CommentDTO> Comments { get; set; }
         public UserDTO_ForEntities User { get; set; }
         public List<FoodEquipmentDTO> FoodEquipments{ get; set; }
     }
