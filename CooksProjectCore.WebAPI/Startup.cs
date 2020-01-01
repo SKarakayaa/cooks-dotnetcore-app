@@ -11,6 +11,7 @@ using CooksProjectCore.Core.Extensions;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Encryption;
 using CooksProjectCore.Core.Utilities.IoC;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,9 +19,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.Swagger;
 
 namespace CooksProjectCore.WebAPI
 {
@@ -34,13 +36,13 @@ namespace CooksProjectCore.WebAPI
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Cooks API", Version = "V1" });
+                c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Cooks API", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -71,21 +73,15 @@ namespace CooksProjectCore.WebAPI
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
 
-            var containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterModule<AutofacBussinessModule>();
-            containerBuilder.Populate(services);
-            var container = containerBuilder.Build();
-
             services.AddDependencyResolver(new ICoreModule[]
             {
                 new CoreModule()
             });
 
-            return new AutofacServiceProvider(container);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -100,17 +96,12 @@ namespace CooksProjectCore.WebAPI
                 c.SwaggerEndpoint("swagger/v1/swagger.json", "Cooks API V1");
                 c.RoutePrefix=string.Empty;
             });
+            app.UseMvc();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseHttpsRedirection();
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "cooks-api/swagger");
-            });
         }
     }
 }
