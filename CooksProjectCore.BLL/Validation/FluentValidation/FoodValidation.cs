@@ -10,11 +10,9 @@ namespace CooksProjectCore.BLL.Validation.FluentValidation
     {
         public FoodValidation()
         {
-            RuleFor(f => f.Name).NotEmpty();
-            RuleFor(f => f.UserID).NotEmpty();
-            RuleFor(f => f.Recipe).NotEmpty();
-            RuleFor(f => f.Recipe).MaximumLength(8000);
-            RuleFor(f => f.ImageUrl).NotEmpty();
+            RuleFor(f => f.Name).NotNull().NotEmpty();
+            RuleFor(f => f.Recipe).NotNull().NotEmpty();
+            RuleFor(f => f.ImageUrl).NotNull().NotEmpty();
         }
     }
 }

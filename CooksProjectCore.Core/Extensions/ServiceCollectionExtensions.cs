@@ -8,7 +8,7 @@ namespace CooksProjectCore.Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddDependencyResolver(this IServiceCollection services,ICoreModule[] modules)
+        public static IServiceCollection AddDependencyResolver(this IServiceCollection services, ICoreModule[] modules)
         {
             foreach (var module in modules)
             {

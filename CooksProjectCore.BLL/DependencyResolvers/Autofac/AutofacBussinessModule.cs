@@ -1,10 +1,12 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using AutoMapper;
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Concrete;
 using CooksProjectCore.BLL.Mapping;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Jwt;
+using CooksProjectCore.Core.Utilities.Interceptor;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.DAL.Concrete;
 using CooksProjectCore.DAL.Concrete.EntityFramework;
@@ -35,6 +37,12 @@ namespace CooksProjectCore.BLL.DependencyResolvers.Autofac
 
             builder.RegisterType<EFLikeDAL>().As<ILikeDAL>();
             builder.RegisterType<LikeManager>().As<ILikeService>();
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces().EnableInterfaceInterceptors(new Castle.DynamicProxy.ProxyGenerationOptions()
+            {
+                Selector = new AspectInterceptorSelector()
+            }).SingleInstance();
         }
     }
 }

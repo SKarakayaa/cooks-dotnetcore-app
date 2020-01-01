@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Constants;
+using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Hashing;
 using CooksProjectCore.Core.Utilities.Results;
@@ -29,7 +31,7 @@ namespace CooksProjectCore.BLL.Concrete
             var accessToken = _tokenHelper.CreateToken(user, roles);
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
-
+        [AspectValidation(typeof(LoginValidation),Priority = 1)]
         public IDataResult<User> Login(LoginDTO loginDTO)
         {
             var user = _userService.GetUserByMail(loginDTO.Email);
@@ -40,7 +42,7 @@ namespace CooksProjectCore.BLL.Concrete
 
             return new SuccessDataResult<User>(user);
         }
-
+        [AspectValidation(typeof(RegisterValidation),Priority = 1)]
         public IDataResult<User> Register(RegisterDTO registerDTO)
         {
             byte[] passwordHash, passwordSalt;

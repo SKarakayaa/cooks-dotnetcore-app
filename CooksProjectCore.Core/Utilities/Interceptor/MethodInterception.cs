@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Castle.DynamicProxy;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Castle.DynamicProxy;
 
-namespace CooksProjectCore.Core.Utilities.Interceptors
+namespace CooksProjectCore.Core.Utilities.Interceptor
 {
     public class MethodInterception:MethodInterceptorBaseAttribute
     {
@@ -21,8 +21,8 @@ namespace CooksProjectCore.Core.Utilities.Interceptors
             }
             catch (Exception)
             {
-                OnException(invocation);
                 isSuccess = false;
+                OnException(invocation);
                 throw;
             }
             finally

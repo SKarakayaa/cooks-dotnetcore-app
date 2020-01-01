@@ -6,11 +6,9 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CooksProjectCore.BLL.DependencyResolvers.Autofac;
 using CooksProjectCore.BLL.Mapping.Automapper;
-using CooksProjectCore.Core.DependencyResolver;
 using CooksProjectCore.Core.Extensions;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Encryption;
-using CooksProjectCore.Core.Utilities.IoC;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -72,11 +70,6 @@ namespace CooksProjectCore.WebAPI
             });
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
-
-            services.AddDependencyResolver(new ICoreModule[]
-            {
-                new CoreModule()
-            });
 
         }
 
