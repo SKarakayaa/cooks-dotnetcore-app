@@ -56,19 +56,19 @@ namespace CooksProjectCore.WebAPI.Controllers
         }
         [HttpPost]
         [Route("foods/")]
-        public IActionResult Add(Food food)
+        public IActionResult Add(FoodDTO_ForSave food)
         {
             food.ID = Guid.NewGuid();
             food.AddedDate = DateTime.Now;
-            _foodService.Add(food);
+            _foodService.Add(_mapper.Map<Food>(food));
             return Ok();
         }
         [HttpPut]
         [Route("foods/")]
-        public IActionResult Update(Food food)
+        public IActionResult Update(FoodDTO_ForSave food)
         {
             food.ModifiedDate = DateTime.Now;
-            _foodService.Update(food);
+            _foodService.Update(_mapper.Map<Food>(food));
             return Ok();
         }
         [HttpDelete]

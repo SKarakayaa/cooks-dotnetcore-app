@@ -19,5 +19,7 @@ namespace CooksProjectCore.BLL.Validation.FluentValidation
         public static string EmailEmpty= "Email Adresi Boş Geçilemez";
         public static string ValidateEmail = "Girdiğiniz Mail Adresi Uygun Bir Adres Değildir";
 
+        public static string CommentNull = "Lütfen Bir Yorum Giriniz !";
+        public static string CommentMaxLength = "Çok Fazla Karakter Girişi Yaptınız !";
     }
 }

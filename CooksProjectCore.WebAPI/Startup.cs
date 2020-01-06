@@ -6,6 +6,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CooksProjectCore.BLL.DependencyResolvers.Autofac;
 using CooksProjectCore.BLL.Mapping.Automapper;
+using CooksProjectCore.Core.DependencyResolvers;
 using CooksProjectCore.Core.Extensions;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Encryption;
@@ -70,6 +71,11 @@ namespace CooksProjectCore.WebAPI
             });
             var mapper = config.CreateMapper();
             services.AddSingleton(mapper);
+
+            services.AddDependencyResolver(new Core.Utilities.IoC.ICoreModule[]
+            {
+                new CoreModule()
+            });
 
         }
 

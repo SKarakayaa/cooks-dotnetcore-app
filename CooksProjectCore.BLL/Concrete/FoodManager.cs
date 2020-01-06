@@ -1,6 +1,7 @@
 ﻿using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Constants;
 using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.Utilities.Results;
 using CooksProjectCore.DAL.Asbtract;
@@ -19,6 +20,7 @@ namespace CooksProjectCore.BLL.Concrete
             _foodDAL = foodDAL;
         }
         [AspectValidation(typeof(FoodValidation),Priority = 1)]
+        [RemoveCacheAspect(pattern:"IFoodService.Get",Priority = 2)]
         public IResult Add(Food food)
         {
             _foodDAL.Add(food);
@@ -36,13 +38,13 @@ namespace CooksProjectCore.BLL.Concrete
             var food = _foodDAL.Get(x => x.ID == foodId, new string[] { "User","FoodEquipments" });
             return new SuccessDataResult<Food>(food);
         }
-
+        [CacheAspect(30,Priority = 1)]
         public IDataResult<List<Food>> GetList()
         {
             var foods = _foodDAL.GetList(null , new string[] { "User" });
             return new SuccessDataResult<List<Food>>(foods);
         }
-
+        [CacheAspect(30, Priority = 1)]
         public IDataResult<List<Food>> GetListByUser(int userId)
         {
             var foods = _foodDAL.GetList(x => x.UserID == userId, new string[] { "User" });

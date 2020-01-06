@@ -1,4 +1,5 @@
 ﻿using CooksProjectCore.BLL.Abstract;
+using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
 using System;
@@ -14,6 +15,7 @@ namespace CooksProjectCore.BLL.Concrete
         {
             _userDAL = userDAL;
         }
+        [RemoveCacheAspect(pattern:"IUserService.Get",Priority = 1)]
         public void Add(User user)
         {
             _userDAL.Add(user);
@@ -47,7 +49,7 @@ namespace CooksProjectCore.BLL.Concrete
         {
             return _userDAL.Get(x => x.Email == mail);
         }
-
+        [CacheAspect(duration:30,Priority = 1)]
         public List<User> GetUsers()
         {
             return _userDAL.GetList();
