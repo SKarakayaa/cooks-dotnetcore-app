@@ -1,4 +1,5 @@
 ﻿using CooksProjectCore.Entities.Concrete;
+using CooksProjectCore.Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,9 +12,9 @@ namespace CooksProjectCore.BLL.Abstract
         void Add(User user);
         List<Role> GetRoles(User user);
         User GetUserByMail(string mail);
-        User GetUserByID(int userId);
+        UserDTO_ForView GetUserByID(int userId);
         void Update(User user);
-        List<User> GetUsers();
+        List<UserDTO_ForEntities> GetUsers();
         void AssignRole(int userId);
 
         //Social Media

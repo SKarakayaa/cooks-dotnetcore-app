@@ -16,13 +16,11 @@ namespace CooksProjectCore.WebAPI.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly IMapper _mapper;
         private readonly IFollowService _followService;
-        public UserController(IUserService userService,IFollowService followService,IMapper mapper)
+        public UserController(IUserService userService,IFollowService followService)
         {
             _userService = userService;
             _followService = followService;
-            _mapper = mapper;
         }
         [HttpGet]
         [Route("users/{userId}")]
@@ -31,15 +29,14 @@ namespace CooksProjectCore.WebAPI.Controllers
             var user = _userService.GetUserByID(userId);
             if (user == null) return NotFound();
 
-            return Ok(_mapper.Map<UserDTO_ForView>(user));
+            return Ok(user);
         }
         [HttpGet]
         [Route("users/")]
         public IActionResult GetUsers()
         {
             var userList = _userService.GetUsers();
-            var users = _mapper.Map<List<UserDTO_ForEntities>>(userList);
-            return Ok(users);
+            return Ok(userList);
         }
         [HttpPost]
         [HttpPut]
@@ -71,7 +68,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var follows = _followService.Follows(userId);
             if (follows == null)
                 return NotFound();
-            return Ok(_mapper.Map<List<FollowTableDTO>>(follows));
+            return Ok(follows);
         }
         [HttpGet]
         [Route("users/{userId}/followers")]

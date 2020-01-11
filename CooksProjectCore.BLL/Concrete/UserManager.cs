@@ -1,7 +1,11 @@
-﻿using CooksProjectCore.BLL.Abstract;
+﻿using AutoMapper;
+using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.Core.Aspects.Caching;
+using CooksProjectCore.Core.Aspects.Logging;
+using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
+using CooksProjectCore.Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,15 +15,20 @@ namespace CooksProjectCore.BLL.Concrete
     public class UserManager : IUserService
     {
         private readonly IUserDAL _userDAL;
-        public UserManager(IUserDAL userDAL)
+        private readonly IMapper _mapper;
+        public UserManager(IUserDAL userDAL,IMapper mapper)
         {
             _userDAL = userDAL;
+            _mapper = mapper;
         }
         [RemoveCacheAspect(pattern:"IUserService.Get",Priority = 1)]
+        [LogAspect(typeof(RequestsFileLogger),Priority = 2)]
         public void Add(User user)
         {
             _userDAL.Add(user);
         }
+        [RemoveCacheAspect(pattern: "IUserService.Get", Priority = 1)]
+        [LogAspect(typeof(RequestsFileLogger), Priority = 2)]
         public void Update(User user)
         {
             _userDAL.Update(user);
@@ -40,9 +49,10 @@ namespace CooksProjectCore.BLL.Concrete
             return _userDAL.GetRoles(user);
         }
 
-        public User GetUserByID(int userId)
+        public UserDTO_ForView GetUserByID(int userId)
         {
-            return _userDAL.Get(x => x.ID == userId,new string[]{ "SocialMedia" });
+            var user = _userDAL.Get(x => x.ID == userId,new string[]{ "SocialMedia" });
+            return _mapper.Map<UserDTO_ForView>(user);
         }
 
         public User GetUserByMail(string mail)
@@ -50,9 +60,10 @@ namespace CooksProjectCore.BLL.Concrete
             return _userDAL.Get(x => x.Email == mail);
         }
         [CacheAspect(duration:30,Priority = 1)]
-        public List<User> GetUsers()
+        public List<UserDTO_ForEntities> GetUsers()
         {
-            return _userDAL.GetList();
+            var users = _userDAL.GetList();
+            return _mapper.Map<List<UserDTO_ForEntities>>(users);
         }
 
         public void UpdateSocialMedia(SocialMedia socialMedia)

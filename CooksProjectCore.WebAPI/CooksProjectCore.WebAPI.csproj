@@ -21,7 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Logs\RequestsLogs\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

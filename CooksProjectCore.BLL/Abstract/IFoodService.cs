@@ -9,12 +9,12 @@ namespace CooksProjectCore.BLL.Abstract
 {
     public interface IFoodService
     {
-        IDataResult<List<Food>> GetList();
-        IDataResult<List<Food>> GetListByUser(int userId);
-        IDataResult<Food> Get(Guid foodId);
-        IResult Add(Food food);
-        IResult Remove(Food food);
-        IResult Update(Food food);
+        IDataResult<List<FoodsDTO_ForList>> GetList();
+        IDataResult<List<FoodsDTO_ForList>> GetListByUser(int userId);
+        IDataResult<FoodsDTO_ForDetail> Get(Guid foodId);
+        IResult Add(FoodDTO_ForSave food);
+        IResult Remove(Guid foodId);
+        IResult Update(FoodDTO_ForSave food);
         IResult AddEquipment(Guid foodId, string equipments);
     }
 }

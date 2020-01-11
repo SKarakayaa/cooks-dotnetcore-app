@@ -1,4 +1,5 @@
 ﻿using CooksProjectCore.Entities.Concrete;
+using CooksProjectCore.Entities.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,7 @@ namespace CooksProjectCore.BLL.Abstract
         //Follow and Followers
         void AddFollow(FollowTable followTable);
         void DeleteFollow(FollowTable followTable);
-        List<FollowTable> Follows(int userId);
-        List<FollowTable> Followers(int userId);
+        List<FollowTableDTO> Follows(int userId);
+        List<FollowerTableDTO> Followers(int userId);
     }
 }

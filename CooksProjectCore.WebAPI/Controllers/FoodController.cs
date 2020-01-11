@@ -17,12 +17,10 @@ namespace CooksProjectCore.WebAPI.Controllers
     {
         private readonly IFoodService _foodService;
         private readonly ILikeService _likeService;
-        private readonly IMapper _mapper;
-        public FoodController(IFoodService foodService,ILikeService likeService,IMapper mapper)
+        public FoodController(IFoodService foodService,ILikeService likeService)
         {
             _foodService = foodService;
             _likeService = likeService;
-            _mapper = mapper;
         }
         [HttpGet]
         [Route("foods/")]
@@ -31,8 +29,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var foods = _foodService.GetList();
             if (!foods.Succes)
                 return BadRequest(foods.Message);
-            var foodsDTO = _mapper.Map<List<FoodsDTO_ForList>>(foods.Data);
-            return Ok(foodsDTO);
+            return Ok(foods.Data);
         }
         [HttpGet]
         [Route("foods/{userId}")]
@@ -41,8 +38,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var foods = _foodService.GetListByUser(userId);
             if (!foods.Succes)
                 return BadRequest(foods.Message);
-            var foodsDTO = _mapper.Map<List<FoodsDTO_ForList>>(foods.Data);
-            return Ok(foodsDTO);
+            return Ok(foods.Data);
         }
         [HttpGet]
         [Route("foods/{foodId}")]
@@ -51,8 +47,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var food = _foodService.Get(foodId);
             if (!food.Succes)
                 return BadRequest(food.Message);
-            var foodDTO = _mapper.Map<FoodsDTO_ForDetail>(food.Data);
-            return Ok(foodDTO);
+            return Ok(food.Data);
         }
         [HttpPost]
         [Route("foods/")]
@@ -60,7 +55,7 @@ namespace CooksProjectCore.WebAPI.Controllers
         {
             food.ID = Guid.NewGuid();
             food.AddedDate = DateTime.Now;
-            _foodService.Add(_mapper.Map<Food>(food));
+            _foodService.Add(food);
             return Ok();
         }
         [HttpPut]
@@ -68,15 +63,14 @@ namespace CooksProjectCore.WebAPI.Controllers
         public IActionResult Update(FoodDTO_ForSave food)
         {
             food.ModifiedDate = DateTime.Now;
-            _foodService.Update(_mapper.Map<Food>(food));
+            _foodService.Update(food);
             return Ok();
         }
         [HttpDelete]
         [Route("foods/{foodId}")]
         public IActionResult Delete(Guid foodId)
         {
-            var food = _foodService.Get(foodId);
-            _foodService.Remove(food.Data);
+            _foodService.Remove(foodId);
             return Ok();
         }
         [HttpPost]

@@ -16,11 +16,9 @@ namespace CooksProjectCore.WebAPI.Controllers
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;
-        private readonly IMapper _mapper;
-        public CommentController(ICommentService commentService,IMapper mapper)
+        public CommentController(ICommentService commentService)
         {
             _commentService = commentService;
-            _mapper = mapper;
         }
         [HttpPost]
         [Route("comments/add-comment")]
@@ -49,8 +47,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             var result = _commentService.GetCommentsByMenu(Guid.Parse(foodId));
             if (!result.Succes)
                 return BadRequest(result.Message);
-            var commentDTO = _mapper.Map<List<CommentDTO>>(result.Data); 
-            return Ok(commentDTO);
+            return Ok(result.Data);
         }
     }
 }
