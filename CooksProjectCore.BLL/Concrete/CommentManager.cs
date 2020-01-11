@@ -3,6 +3,8 @@ using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Validation.FluentValidation;
 using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.Core.Aspects.Logging;
+using CooksProjectCore.Core.Aspects.Performance;
+using CooksProjectCore.Core.Aspects.Transaction;
 using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using CooksProjectCore.Core.Utilities.Results;
@@ -27,6 +29,8 @@ namespace CooksProjectCore.BLL.Concrete
         [AspectValidation(typeof(CommentValidation),Priority = 1)]
         [RemoveCacheAspect(pattern:"ICommentService.Get",Priority = 2)]
         [LogAspect(typeof(RequestsFileLogger),Priority = 3)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 4)]
+        [TransactionAspect(Priority = 5)]
         public IResult AddComment(Comment comment)
         {
             _commentDAL.Add(comment);
@@ -34,6 +38,8 @@ namespace CooksProjectCore.BLL.Concrete
         }
         [RemoveCacheAspect(pattern: "ICommentService.Get", Priority = 1)]
         [LogAspect(typeof(RequestsFileLogger), Priority = 2)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 3)]
+        [TransactionAspect(Priority = 4)]
         public IResult DeleteComment(Guid commentId)
         {
             var comment = _commentDAL.Get(x => x.ID == commentId);

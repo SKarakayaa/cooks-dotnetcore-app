@@ -16,5 +16,8 @@ namespace CooksProjectCore.Core.Utilities.Messages
         //Logger Aspect Messages
         public static string WrongLoggerType = "Yanlış Bir Loglama Türü Girildi...";
 
+        //Transtaction Aspect Messages
+        public static string ErrorWhileProceed = "Birşeyler Ters Gitti !";
+
     }
 }

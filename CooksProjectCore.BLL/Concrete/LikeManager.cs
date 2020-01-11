@@ -1,4 +1,5 @@
 ﻿using CooksProjectCore.BLL.Abstract;
+using CooksProjectCore.Core.Aspects.Transaction;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
 using System;
@@ -14,11 +15,12 @@ namespace CooksProjectCore.BLL.Concrete
         {
             _likeDAL = likeDAL;
         }
+        [TransactionAspect(Priority = 1)]
         public void AddLike(Like like)
         {
             _likeDAL.Add(like);
         }
-
+        [TransactionAspect(Priority = 1)]
         public void DeleteLike(Like like)
         {
             _likeDAL.Add(like);

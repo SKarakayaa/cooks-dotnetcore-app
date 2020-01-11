@@ -2,6 +2,8 @@
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.Core.Aspects.Logging;
+using CooksProjectCore.Core.Aspects.Performance;
+using CooksProjectCore.Core.Aspects.Transaction;
 using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
@@ -29,6 +31,8 @@ namespace CooksProjectCore.BLL.Concrete
         }
         [RemoveCacheAspect(pattern: "IUserService.Get", Priority = 1)]
         [LogAspect(typeof(RequestsFileLogger), Priority = 2)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 3)]
+        [TransactionAspect(Priority = 4)]
         public void Update(User user)
         {
             _userDAL.Update(user);
@@ -60,6 +64,7 @@ namespace CooksProjectCore.BLL.Concrete
             return _userDAL.Get(x => x.Email == mail);
         }
         [CacheAspect(duration:30,Priority = 1)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 2)]
         public List<UserDTO_ForEntities> GetUsers()
         {
             var users = _userDAL.GetList();

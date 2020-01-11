@@ -2,7 +2,9 @@
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Constants;
 using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Performance;
 using CooksProjectCore.Core.Aspects.Validation;
+using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using CooksProjectCore.Core.Security;
 using CooksProjectCore.Core.Security.Hashing;
 using CooksProjectCore.Core.Utilities.Results;
@@ -32,6 +34,7 @@ namespace CooksProjectCore.BLL.Concrete
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
         [AspectValidation(typeof(LoginValidation),Priority = 1)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 2)]
         public IDataResult<User> Login(LoginDTO loginDTO)
         {
             var user = _userService.GetUserByMail(loginDTO.Email);
@@ -43,6 +46,7 @@ namespace CooksProjectCore.BLL.Concrete
             return new SuccessDataResult<User>(user);
         }
         [AspectValidation(typeof(RegisterValidation),Priority = 1)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 2)]
         public IDataResult<User> Register(RegisterDTO registerDTO)
         {
             byte[] passwordHash, passwordSalt;

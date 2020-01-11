@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CooksProjectCore.BLL.Abstract;
+using CooksProjectCore.Core.Aspects.Transaction;
 using CooksProjectCore.DAL.Asbtract;
 using CooksProjectCore.Entities.Concrete;
 using CooksProjectCore.Entities.Dto;
@@ -18,11 +19,12 @@ namespace CooksProjectCore.BLL.Concrete
             _followDAL = followDAL;
             _mapper = mapper;
         }
+        [TransactionAspect(Priority = 1)]
         public void AddFollow(FollowTable followTable)
         {
             _followDAL.Add(followTable);
         }
-
+        [TransactionAspect(Priority = 1)]
         public void DeleteFollow(FollowTable followTable)
         {
             _followDAL.Remove(followTable);

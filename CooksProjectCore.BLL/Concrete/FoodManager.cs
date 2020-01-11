@@ -4,6 +4,8 @@ using CooksProjectCore.BLL.Constants;
 using CooksProjectCore.BLL.Validation.FluentValidation;
 using CooksProjectCore.Core.Aspects.Caching;
 using CooksProjectCore.Core.Aspects.Logging;
+using CooksProjectCore.Core.Aspects.Performance;
+using CooksProjectCore.Core.Aspects.Transaction;
 using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using CooksProjectCore.Core.Utilities.Results;
@@ -28,6 +30,7 @@ namespace CooksProjectCore.BLL.Concrete
         [AspectValidation(typeof(FoodValidation),Priority = 1)]
         [RemoveCacheAspect(pattern:"IFoodService.Get",Priority = 2)]
         [LogAspect(typeof(RequestsFileLogger), Priority = 3)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 4)]
         public IResult Add(FoodDTO_ForSave food)
         {
             _foodDAL.Add(_mapper.Map<Food>(food));
@@ -39,25 +42,27 @@ namespace CooksProjectCore.BLL.Concrete
             _foodDAL.AddEquipment(foodId, equipments);
             return new SuccessResult();
         }
-
         public IDataResult<FoodsDTO_ForDetail> Get(Guid foodId)
         {
             var food = _foodDAL.Get(x => x.ID == foodId, new string[] { "User","FoodEquipments" });
             return new SuccessDataResult<FoodsDTO_ForDetail>(_mapper.Map<FoodsDTO_ForDetail>(food));
         }
         [CacheAspect(30,Priority = 1)]
+        [PerformanceAspect(typeof(PerformanceFileLogger),5,Priority = 2)]
         public IDataResult<List<FoodsDTO_ForList>> GetList()
         {
             var foods = _foodDAL.GetList(null , new string[] { "User" });
             return new SuccessDataResult<List<FoodsDTO_ForList>>(_mapper.Map<List<FoodsDTO_ForList>>(foods));
         }
         [CacheAspect(30, Priority = 1)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 2)]
         public IDataResult<List<FoodsDTO_ForList>> GetListByUser(int userId)
         {
             var foods = _foodDAL.GetList(x => x.UserID == userId, new string[] { "User" });
             return new SuccessDataResult<List<FoodsDTO_ForList>>(_mapper.Map<List<FoodsDTO_ForList>>(foods));
         }
         [LogAspect(typeof(RequestsFileLogger), Priority = 1)]
+        [TransactionAspect(Priority = 2)]
         public IResult Remove(Guid foodId)
         {
             var food = _foodDAL.Get(x => x.ID == foodId);
@@ -67,6 +72,8 @@ namespace CooksProjectCore.BLL.Concrete
         [AspectValidation(typeof(FoodValidation),Priority = 1)]
         [RemoveCacheAspect(pattern: "IFoodService.Get", Priority = 2)]
         [LogAspect(typeof(RequestsFileLogger), Priority = 3)]
+        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 4)]
+        [TransactionAspect(Priority = 5)]
         public IResult Update(FoodDTO_ForSave food)
         {
             _foodDAL.Update(_mapper.Map<Food>(food));
