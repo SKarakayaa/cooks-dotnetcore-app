@@ -18,7 +18,7 @@ namespace CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Layouts
         public override void Format(TextWriter writer, LoggingEvent loggingEvent)
         {
             var logEvent = new SerializableLogEvent(loggingEvent);
-            var json = JsonConvert.SerializeObject(logEvent, Formatting.Indented);
+            var json = JsonConvert.SerializeObject(logEvent,Formatting.Indented)+",";
             writer.WriteLine(json);
         }
     }

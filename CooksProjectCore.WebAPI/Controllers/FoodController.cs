@@ -32,7 +32,7 @@ namespace CooksProjectCore.WebAPI.Controllers
             return Ok(foods.Data);
         }
         [HttpGet]
-        [Route("foods/{userId}")]
+        [Route("foods/user/{userId}")]
         public IActionResult GetFoodsByUser(int userId)
         {
             var foods = _foodService.GetListByUser(userId);

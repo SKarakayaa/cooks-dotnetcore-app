@@ -6,7 +6,7 @@ namespace CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers
 {
     public class RequestsFileLogger : LoggerServiceBase
     {
-        public RequestsFileLogger() : base("RequestsLogger")
+        public RequestsFileLogger() : base("requestsLogger")
         {
         }
     }

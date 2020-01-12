@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers
 {
-    public class PerformanceFileLogger : LoggerServiceBase
+    public class ExceptionFileLogger : LoggerServiceBase
     {
-        public PerformanceFileLogger() : base("performanceLogger")
+        public ExceptionFileLogger() : base("exceptionLogger")
         {
         }
     }

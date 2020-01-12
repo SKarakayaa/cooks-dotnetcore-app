@@ -2,6 +2,7 @@
 using CooksProjectCore.BLL.Abstract;
 using CooksProjectCore.BLL.Constants;
 using CooksProjectCore.BLL.Validation.FluentValidation;
+using CooksProjectCore.Core.Aspects.Exception;
 using CooksProjectCore.Core.Aspects.Performance;
 using CooksProjectCore.Core.Aspects.Validation;
 using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
@@ -34,7 +35,7 @@ namespace CooksProjectCore.BLL.Concrete
             return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
         }
         [AspectValidation(typeof(LoginValidation),Priority = 1)]
-        [PerformanceAspect(typeof(PerformanceFileLogger), 5, Priority = 2)]
+        [PerformanceAspect(typeof(PerformanceFileLogger),interval:5,Priority = 2)]
         public IDataResult<User> Login(LoginDTO loginDTO)
         {
             var user = _userService.GetUserByMail(loginDTO.Email);

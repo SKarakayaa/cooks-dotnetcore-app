@@ -88,7 +88,7 @@ namespace CooksProjectCore.WebAPI
             }
             app.UseCors(builder => builder.WithOrigins("https://localhost:3000").AllowAnyOrigin());
             app.UseAuthentication();
-
+            app.ConfigureCustomExceptionMiddleware();
             app.UseSwagger();
             app.UseSwaggerUI(c => 
             {

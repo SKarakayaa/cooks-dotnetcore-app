@@ -1,4 +1,6 @@
 ﻿using Castle.DynamicProxy;
+using CooksProjectCore.Core.Aspects.Exception;
+using CooksProjectCore.Core.CrossCuttingConcerns.Logging.log4net.Loggers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace CooksProjectCore.Core.Utilities.Interceptor
             var classAttribues = type.GetCustomAttributes<MethodInterceptorBaseAttribute>(true).ToList();
             var methodAttributes = type.GetMethod(method.Name).GetCustomAttributes<MethodInterceptorBaseAttribute>(true);
             classAttribues.AddRange(methodAttributes);
+            classAttribues.Add(new ExceptionAspect(typeof(ExceptionFileLogger)));
             return classAttribues.OrderBy(o => o.Priority).ToArray();
         }
     }

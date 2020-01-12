@@ -1,0 +1,18 @@
+{
+  "Message": {
+    "ExceptionMessage": "Validation failed: \r\n -- Password: Sifrenizde En Az 1 Büyük Karakter Olmak Zorunda\r\n -- Password: Sifreniz Özel Bir Karakter Içermek Zorunda\r\n -- Password: Sifreniz Sayisal Bir Ifade Içermek Zorunda\r\n -- Email: Girdiginiz Mail Adresi Uygun Bir Adres Degildir",
+    "MethodName": "Login",
+    "ServiceName": "IAuthService",
+    "RequestDate": "12 01 2020 - Sunday, 18:23:33",
+    "LogParamaters": [
+      {
+        "Name": "loginDTO",
+        "Value": {
+          "Email": "xxxxxxxxxxx@xxxx.com",
+          "Password": "***************"
+        },
+        "Type": "LoginDTO"
+      }
+    ]
+  }
+},

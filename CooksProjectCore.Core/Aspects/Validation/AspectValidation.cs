@@ -16,7 +16,7 @@ namespace CooksProjectCore.Core.Aspects.Validation
         public AspectValidation(Type validatorType)
         {
             if (!typeof(IValidator).IsAssignableFrom(validatorType))
-                throw new Exception(AspectMessages.WrongValidationType);
+                throw new System.Exception(AspectMessages.WrongValidationType);
             _validatorType = validatorType;
         }
         public override void OnBefore(IInvocation invocation)

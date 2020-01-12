@@ -28,7 +28,7 @@ namespace CooksProjectCore.Core.Aspects.Auth
                 if (userRoles.Contains(role))
                     return;
             }
-            throw new Exception(AspectMessages.AuthorizedDenied);
+            throw new System.Exception(AspectMessages.AuthorizedDenied);
         }
     }
 }

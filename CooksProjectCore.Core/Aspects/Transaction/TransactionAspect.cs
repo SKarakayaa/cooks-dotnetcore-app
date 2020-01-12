@@ -19,10 +19,10 @@ namespace CooksProjectCore.Core.Aspects.Transaction
 					invocation.Proceed();
 					transactionScope.Complete();
 				}
-				catch (Exception)
+				catch (System.Exception)
 				{
 					transactionScope.Dispose();
-					throw new Exception(AspectMessages.ErrorWhileProceed);
+					throw new System.Exception(AspectMessages.ErrorWhileProceed);
 				}
 			}
 			
